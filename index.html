@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UltraLink</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Unitea Sans';
+      src: url('./public/fonts/UniteaSans-Regular.ttf') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Unitea Sans';
+      src: url('./public/fonts/UniteaSans-Bold.ttf') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Francy';
+      src: url('./public/fonts/Francy.ttf') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-unitea {
+      font-family: 'Unitea Sans', sans-serif;
+    }
+
+    .font-francy {
+      font-family: 'Francy', cursive;
+    }
+
+    .btn-rounded {
+      border-radius: .5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 5rem 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-red-500 to-red-700 text-white font-unitea min-h-screen flex flex-col">
+  <!-- Header Section -->
+  <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <img src="./public/logo.png" alt="UltraLink Logo" class="w-28" />
+      <nav class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-red-500" aria-label="Sobre">Sobre</a>
+        <a href="#pricing" class="hover:text-red-500" aria-label="Planos">Planos</a>
+        <a id="instagram-link" target="_blank" class="hover:text-red-500" aria-label="Instagram">Instagram</a>
+        <a href="#faq" class="hover:text-red-500" aria-label="Perguntas Frequentes">Perguntas Frequentes</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu"
+        aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+      <a href="#about" class="block py-2 px-4 hover:bg-red-700" aria-label="Sobre">Sobre</a>
+      <a href="#pricing" class="block py-2 px-4 hover:bg-red-700" aria-label="Planos">Planos</a>
+      <a id="instagram-link" target="_blank" aria-label="Instagram">Instagram</a>
+      <a href="#faq" class="block py-2 px-4 hover:bg-red-700" aria-label="Perguntas Frequentes">Perguntas Frequentes</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-1">
+    <section id="hero" class="hero text-center py-40 bg-cover bg-center" style="background-image: url('/hero-bg.jpg');">
+      <div class="container mx-auto px-6">
+        <h1 class="text-5xl font-bold mb-4 font-unitea">Bem-vindo à UltraLink 🚀</h1>
+        <p class="text-2xl mb-8 font-francy">Seu provedor de internet confiável</p>
+        <a href="#pricing" class="bg-white text-red-600 px-8 py-3 btn-rounded shadow-lg hover:bg-gray-200">Assinar
+          Agora</a>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-gray-900 py-20">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-4xl font-bold text-center mb-12 font-unitea">Sobre Nós 📍</h2>
+        <p class="text-white text-center mb-8">Somos um provedor de internet líder oferecendo serviços de internet
+          rápidos e confiáveis. Trabalhamos em Icó - Ceará.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex justify-center">
+            <img src="./public/about-image.png" alt="Sobre nós" class="h-80 object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="flex flex-col justify-center text-center md:text-left">
+            <p class="text-white mb-4">
+              Nossa missão é oferecer a melhor experiência de internet para nossos clientes, garantindo conexão de alta
+              qualidade, estabilidade e velocidade.
+            </p>
+            <p class="text-white">
+              Para isso, investimos em um atendimento ao cliente excepcional, sempre ágil e eficiente, e
+              disponibilizamos planos de preços acessíveis, permitindo que mais pessoas tenham acesso a uma internet
+              confiável e de alto desempenho.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 text-white">Planos de Preços 💻</h2>
+        <div id="plans-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Plans will be dynamically generated here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-gray-900 py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+        <div id="faqs-container" class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+          <!-- FAQ items will be dynamically generated here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="text-white py-10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 space-y-4 md:space-y-0">
+      <img src="./public/logo.png" alt="UltraLink Logo" class="w-28" />
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+          <li><a href="#about" aria-label="Sobre">Sobre</a></li>
+          <li><a href="#pricing" aria-label="Planos">Planos</a></li>
+          <li><a href="#faq" aria-label="Perguntas Frequentes">Perguntas Frequentes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Icon -->
+  <a id="whatsapp-link" target="_blank" class="fixed bottom-4 right-4 whatsapp-icon" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="70" height="70" viewBox="0 0 48 48">
+      <path fill="#fff"
+        d="M4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19c0,0,0,0,0,0h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3z">
+      </path>
+      <path fill="#fff"
+        d="M4.9,43.8c-0.1,0-0.3-0.1-0.4-0.1c-0.1-0.1-0.2-0.3-0.1-0.5L7,33.5c-1.6-2.9-2.5-6.2-2.5-9.6C4.5,13.2,13.3,4.5,24,4.5c5.2,0,10.1,2,13.8,5.7c3.7,3.7,5.7,8.6,5.7,13.8c0,10.7-8.7,19.5-19.5,19.5c-3.2,0-6.3-0.8-9.1-2.3L5,43.8C5,43.8,4.9,43.8,4.9,43.8z">
+      </path>
+      <path fill="#cfd8dc"
+        d="M24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5 M24,43L24,43L24,43 M24,43L24,43L24,43 M24,4L24,4C13,4,4,13,4,24c0,3.4,0.8,6.7,2.5,9.6L3.9,43c-0.1,0.3,0,0.7,0.3,1c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.2,0,0.3,0l9.7-2.5c2.8,1.5,6,2.2,9.2,2.2c11,0,20-9,20-20c0-5.3-2.1-10.4-5.8-14.1C34.4,6.1,29.4,4,24,4L24,4z">
+      </path>
+      <path fill="#40c351"
+        d="M35.2,12.8c-3-3-6.9-4.6-11.2-4.6C15.3,8.2,8.2,15.3,8.2,24c0,3,0.8,5.9,2.4,8.4L11,33l-1.6,5.8l6-1.6l0.6,0.3c2.4,1.4,5.2,2.2,8,2.2h0c8.7,0,15.8-7.1,15.8-15.8C39.8,19.8,38.2,15.8,35.2,12.8z">
+      </path>
+      <path fill="#fff" fill-rule="evenodd"
+        d="M19.3,16c-0.4-0.8-0.7-0.8-1.1-0.8c-0.3,0-0.6,0-0.9,0s-0.8,0.1-1.3,0.6c-0.4,0.5-1.7,1.6-1.7,4s1.7,4.6,1.9,4.9s3.3,5.3,8.1,7.2c4,1.6,4.8,1.3,5.7,1.2c0.9-0.1,2.8-1.1,3.2-2.3c0.4-1.1,0.4-2.1,0.3-2.3c-0.1-0.2-0.4-0.3-0.9-0.6s-2.8-1.4-3.2-1.5c-0.4-0.2-0.8-0.2-1.1,0.2c-0.3,0.5-1.2,1.5-1.5,1.9c-0.3,0.3-0.6,0.4-1,0.1c-0.5-0.2-2-0.7-3.8-2.4c-1.4-1.3-2.4-2.8-2.6-3.3c-0.3-0.5,0-0.7,0.2-1c0.2-0.2,0.5-0.6,0.7-0.8c0.2-0.3,0.3-0.5,0.5-0.8c0.2-0.3,0.1-0.6,0-0.8C20.6,19.3,19.7,17,19.3,16z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </a>
+
+  <script src="./src/main.js"></script>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>
