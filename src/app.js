@@ -100,8 +100,9 @@ function generateFaqs() {
     if (!container) return;
 
     container.innerHTML = CONFIG.faqs.map(faq => `
-        <div class="faq-item">
-            <h3 class="mb-4 font-bold cursor-pointer">${faq.question}</h3>
+        <div class="faq-item cursor-pointer bg-black p-4 rounded-lg shadow-lg mb-4">
+          
+            <h3 class="mb-4 font-bold">${faq.question}</h3>
             <p class="hidden">${faq.answer}</p>
         </div>
     `).join('');
@@ -120,15 +121,13 @@ function setupMenuToggle() {
 }
 
 function setupFaqToggle() {
-    document.querySelectorAll('.faq-item h3').forEach(item => {
+    document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
-            const content = item.nextElementSibling;
+            const content = item.querySelector('p');
             if (!content) return;
-
-            document.querySelectorAll('.faq-item p').forEach(p => {
+            document.querySelectorAll('#faq-item p').forEach(p => {
                 if (p !== content) p.classList.add('hidden');
             });
-
             content.classList.toggle('hidden');
         });
     });

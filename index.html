@@ -73,7 +73,7 @@
 <body class="bg-gradient-to-r from-red-500 to-red-700 text-white font-unitea min-h-screen flex flex-col">
   <!-- Header Section -->
   <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <div class="mx-auto flex justify-between items-center py-3 md:py-4 px-6">
       <img src="./public/logo.png" alt="UltraLink Logo" class="w-28" />
       <nav class="hidden md:flex space-x-6">
         <a href="#about" class="hover:text-red-500" aria-label="Sobre">Sobre</a>
@@ -91,7 +91,8 @@
     <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
       <a href="#about" class="block py-2 px-4 hover:bg-red-700" aria-label="Sobre">Sobre</a>
       <a href="#pricing" class="block py-2 px-4 hover:bg-red-700" aria-label="Planos">Planos</a>
-      <a id="instagram-link" target="_blank" aria-label="Instagram">Instagram</a>
+      <a id="instagram-link" target="_blank" class="block py-2 px-4 hover:bg-red-700"
+        aria-label="Instagram">Instagram</a>
       <a href="#faq" class="block py-2 px-4 hover:bg-red-700" aria-label="Perguntas Frequentes">Perguntas Frequentes</a>
     </div>
   </header>
@@ -146,7 +147,7 @@
     <section id="faq" class="bg-gray-900 py-20">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12">Perguntas Frequentes</h2>
-        <div id="faqs-container" class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+        <div id="faqs-container" class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
           <!-- FAQ items will be dynamically generated here -->
         </div>
       </div>
